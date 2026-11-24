@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Black Diamond Hub: a wall-screen home hub for a ski lodge</title>
+<meta name="description" content="Black Diamond Hub is a self-hosted home hub for wall screens: an app platform with signed, sandboxed container apps, built for a ski lodge at Sun Peaks, BC.">
+<meta property="og:title" content="Black Diamond Hub">
+<meta property="og:description" content="A self-hosted wall-screen hub with signed, sandboxed container apps.">
+<meta property="og:image" content="img/home.webp">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#top"><img src="img/favicon.svg" alt="" width="28" height="28"> Black Diamond Hub</a>
+  <nav>
+    <a href="#tour">Tour</a>
+    <a href="#apps">App model</a>
+    <a href="#security">Security</a>
+    <a href="#build">Build an app</a>
+    <a href="#architecture">Architecture</a>
+    <a href="https://github.com/blackdiamondlodge">GitHub</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-text">
+    <p class="eyebrow">Self-hosted · Open source · Runs on wall screens</p>
+    <h1>The home screen for a ski lodge.</h1>
+    <p class="lead">Black Diamond Hub runs the touch screens on the walls of
+      Black Diamond Lodge in Sun Peaks, BC. Guests get lift status, the shuttle,
+      restaurants and the hot tub temperature. The house gets heat, lights,
+      speakers and cameras. Every feature is an app, installed from a catalog
+      and run in its own locked-down container.</p>
+    <div class="cta">
+      <a class="btn primary" href="#tour">Take the tour</a>
+      <a class="btn" href="https://github.com/blackdiamondlodge/BlackDiamondHub">View the source</a>
+    </div>
+  </div>
+  <a class="hero-shot" href="img/home.webp" data-full>
+    <img src="img/home.webp" alt="The hub's home screen: On the mountain, In the lodge and More, with live tiles for conditions, restaurants, shuttle, heating, speakers and timers" width="1920" height="1080">
+  </a>
+</section>
+
+<section class="facts">
+  <div><strong>20+</strong><span>apps in the catalog</span></div>
+  <div><strong>2</strong><span>houses, one codebase</span></div>
+  <div><strong>100%</strong><span>self-hosted in the house</span></div>
+  <div><strong>96&nbsp;MB</strong><span>typical app container</span></div>
+</section>
+
+<section id="tour" class="section">
+  <h2>What it does</h2>
+  <p class="sub">One screen for the mountain, the lodge and the people staying in it.
+    Every tile is live, and every screen below is a separate app.</p>
+
+  <div class="feature-grid">
+    <article>
+      <h3>On the mountain</h3>
+      <p>Lift and trail status, the snow report, resort webcams, the village
+        shuttle with live arrivals, restaurants that are open now and resort events.</p>
+    </article>
+    <article>
+      <h3>In the lodge</h3>
+      <p>Radiant floor heat by zone, lights, shades, fans, fireplaces and the garage,
+        house-wide Sonos, exterior lights and a shared family calendar, all driven
+        through Home Assistant.</p>
+    </article>
+    <article>
+      <h3>For guests</h3>
+      <p>Stays that preheat the house before guests arrive, Wi-Fi QR codes,
+        kitchen timers, a restaurant shortlist to send to your phone and a feedback box.</p>
+    </article>
+  </div>
+
+  <div class="gallery">
+    <figure class="wide"><a href="img/lift-status.webp" data-full><img loading="lazy" src="img/lift-status-sm.webp" alt="Lift status app with the trail map and every lift's hours" width="800" height="450"></a>
+      <figcaption><b>Lift Status</b> Trail map and every lift, straight from the resort.</figcaption></figure>
+    <figure class="wide"><a href="img/radiant.webp" data-full><img loading="lazy" src="img/radiant-sm.webp" alt="Radiant heat app showing two heat pumps, a buffer tank and five floor zones" width="800" height="450"></a>
+      <figcaption><b>Radiant Heat</b> Heat pumps, buffer tank and each floor zone, live.</figcaption></figure>
+    <figure><a href="img/shuttle.webp" data-full><img loading="lazy" src="img/shuttle-sm.webp" alt="Shuttle app with a map of the route and upcoming stop times" width="800" height="450"></a>
+      <figcaption><b>Shuttle</b> Where the bus is and when it gets here.</figcaption></figure>
+    <figure><a href="img/restaurants.webp" data-full><img loading="lazy" src="img/restaurants-sm.webp" alt="Restaurants app with a grid of Sun Peaks restaurants and their ratings" width="800" height="450"></a>
+      <figcaption><b>Restaurants</b> What's open now, with a shortlist to send to your phone.</figcaption></figure>
+    <figure><a href="img/snow-report.webp" data-full><img loading="lazy" src="img/snow-report-sm.webp" alt="Snow report with conditions, snowfall and a five-day forecast" width="800" height="450"></a>
+      <figcaption><b>Snow Report</b> Snowfall, base and the five-day forecast.</figcaption></figure>
+    <figure><a href="img/sunpeaks-webcams.webp" data-full><img loading="lazy" src="img/sunpeaks-webcams-sm.webp" alt="Grid of resort webcams by elevation" width="800" height="450"></a>
+      <figcaption><b>Webcams</b> Every resort camera, grouped by elevation.</figcaption></figure>
+    <figure class="wide"><a href="img/hub-calendar.webp" data-full><img loading="lazy" src="img/hub-calendar-sm.webp" alt="Month calendar showing resort events" width="800" height="450"></a>
+      <figcaption><b>Calendar</b> Family feeds merged with resort events shared by another app.</figcaption></figure>
+    <figure><a href="img/gemstone.webp" data-full><img loading="lazy" src="img/gemstone-sm.webp" alt="Gemstone permanent lights app with a picture of the house and brightness control" width="800" height="450"></a>
+      <figcaption><b>Gemstone</b> The lodge's permanent exterior lights.</figcaption></figure>
+    <figure><a href="img/device-control.webp" data-full><img loading="lazy" src="img/device-control-sm.webp" alt="Controls app with scene buttons and tabs for lights, shades, fans and more" width="800" height="450"></a>
+      <figcaption><b>Controls</b> Scenes, lights, shades, fans, fireplaces and the garage.</figcaption></figure>
+    <figure class="full"><a href="img/speakers.webp" data-full><img loading="lazy" src="img/speakers-sm.webp" alt="Speakers app with quick groups and room volume sliders" width="800" height="109"></a>
+      <figcaption><b>Speakers</b> Group rooms, set volumes and play from your phone.</figcaption></figure>
+  </div>
+</section>
+
+<section id="apps" class="section alt">
+  <h2>Everything is an app</h2>
+  <p class="sub">The hub itself is a small shell: home screen, settings, accounts and a broker.
+    Features ship as apps, each in its own repository with its own releases.</p>
+
+  <div class="steps">
+    <div><span>1</span><h3>Publish</h3><p>An app repo tags a release. Shared CI builds a Python wheel and attests where it came from.</p></div>
+    <div><span>2</span><h3>Build</h3><p>The <a href="https://github.com/blackdiamondlodge/bdh-app-catalog">catalog</a> builds a container image from the wheel on a pinned runtime base, signs its provenance and opens a PR with the new entry.</p></div>
+    <div><span>3</span><h3>Install</h3><p>Settings → Apps → Store lists what the app asks for (Home Assistant entities, network, memory) before you install it.</p></div>
+    <div><span>4</span><h3>Run</h3><p>The <a href="https://github.com/blackdiamondlodge/bdh-supervisor">supervisor</a> verifies the signature, starts the container and the hub proxies it on its own port, waking it on demand.</p></div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3>Beta and stable channels</h3>
+      <p>A pre-release version (<code>2.3.0b1</code>) is a beta. One house follows
+        betas and tries them first; promoting a beta flips its catalog entry to
+        stable with the same image, no rebuild.</p>
+      <h3>One codebase, several houses</h3>
+      <p>Everything that differs between houses (branding, home screen sections,
+        which apps are baked in, per-app defaults) lives in a site folder. CI
+        publishes one image per site.</p>
+    </div>
+    <div>
+      <h3>Apps talk through the hub, not to each other</h3>
+      <p>Containers get a broker token instead of credentials. Through it an app
+        can read and call the Home Assistant entities it was granted, keep
+        settings, secrets and state, subscribe to events, and publish or read
+        shared data such as a calendar feed.</p>
+      <h3>Small by design</h3>
+      <p>Apps idle at well under 100&nbsp;MB, and on-demand apps stop after ten idle
+        minutes. The hub keeps showing their last status and wakes them when a
+        screen opens them.</p>
+    </div>
+  </div>
+</section>
+
+<section id="security" class="section">
+  <h2>Security model</h2>
+  <p class="sub">A house hub sees door locks, cameras and guests' stays. Apps are treated as
+    untrusted code that has to ask for everything.</p>
+  <div class="card-grid">
+    <article><h3>Signed supply chain</h3>
+      <p>Wheels are pinned by SHA-256. Images are pulled by digest only, and only
+        if a Sigstore/SLSA attestation from the catalog's build workflow vouches
+        for that exact digest. A tampered catalog can't point at an image the
+        builder didn't sign.</p></article>
+    <article><h3>Least-privilege permissions</h3>
+      <p>Apps declare grants like <code>ha.read:climate.main_floor</code> or
+        <code>ha.call:climate.set_temperature</code>. The broker enforces them on
+        every call and trims Home Assistant's registry to what the app may see.
+        An update that asks for more needs approval again.</p></article>
+    <article><h3>Network modes</h3>
+      <p>Each app runs with <code>none</code> (no network at all), <code>outbound</code>
+        (internet only) or <code>lan</code>, which the admin has to grant
+        explicitly. Most apps need nothing but the hub.</p></article>
+    <article><h3>Locked-down containers</h3>
+      <p>Non-root user, read-only root filesystem, every Linux capability dropped,
+        <code>no-new-privileges</code>, and limits on memory, CPU and process count.</p></article>
+    <article><h3>Encrypted secrets</h3>
+      <p>Passwords and API keys are stored with AES-256-GCM, bound to their app and
+        name, with the key kept outside the database. Settings pages never show a
+        secret again, and backups hold only ciphertext.</p></article>
+    <article><h3>Rate limits and audit</h3>
+      <p>Broker calls are rate limited per app and audited by app, operation and
+        name, never by value. Containers never see the hub's environment.</p></article>
+  </div>
+</section>
+
+<section id="build" class="section alt">
+  <h2>Build an app</h2>
+  <p class="sub">An app is a Django app plus a manifest. The
+    <a href="https://github.com/blackdiamondlodge/bdh-sdk">bdh-sdk</a> gives it tiles,
+    settings, Home Assistant, speakers, events and shared data, and a reusable CI
+    workflow that tests, releases and attests it.</p>
+  <div class="two-col code-col">
+<pre><code><span class="c"># radiant/plugin.py (simplified)</span>
+<span class="k">from</span> bdh_sdk <span class="k">import</span> PluginSpec, Setting, Tile
+<span class="k">from</span> bdh_sdk.plugins <span class="k">import</span> INT, NETWORK_NONE, LIFECYCLE_ON_DEMAND
+
+spec = PluginSpec(
+    id=<span class="s">"radiant"</span>, app=<span class="s">"radiant"</span>,
+    urls=<span class="s">"radiant.urls"</span>,
+    status=<span class="s">"radiant.homepage.status"</span>,  <span class="c"># live tile text</span>
+    tiles=(Tile(title=<span class="s">"Radiant Heat"</span>, url_name=<span class="s">"radiant"</span>,
+                icon=<span class="s">"radiant/hub/icon.svg"</span>, section=<span class="s">"lodge"</span>),),
+    settings=(Setting(<span class="s">"setpoint_debounce_s"</span>, <span class="s">"Setpoint debounce"</span>,
+                      type=INT, default=<span class="n">10</span>, unit=<span class="s">"s"</span>),),
+    api_version=<span class="n">2</span>,
+    permissions=(
+        <span class="s">"ha.read:climate.main_floor"</span>,
+        <span class="s">"ha.read:sensor.thermux_*"</span>,
+        <span class="s">"ha.call:climate.set_temperature"</span>,
+    ),
+    network=NETWORK_NONE,          <span class="c"># no network beyond the hub</span>
+    lifecycle=LIFECYCLE_ON_DEMAND,  <span class="c"># sleeps when idle</span>
+    memory_mb=<span class="n">96</span>,
+)</code></pre>
+<pre><code><span class="c"># radiant/views.py</span>
+<span class="k">from</span> bdh_sdk <span class="k">import</span> ha
+
+<span class="k">def</span> <span class="f">set_zone</span>(request, entity_id, target):
+    ok, err = ha.call_service(
+        <span class="s">"climate"</span>, <span class="s">"set_temperature"</span>, entity_id,
+        {<span class="s">"temperature"</span>: target})
+    ...
+
+<span class="c"># .github/workflows/ci.yml</span>
+jobs:
+  hub:
+    uses: blackdiamondlodge/bdh-sdk/.github/workflows/app-ci.yml@v0
+    with:
+      app_id: radiant</code></pre>
+  </div>
+  <p>Tag a release and the rest is automatic: the catalog builds and signs the image,
+    the hubs on the beta channel offer the update, and the store shows anything new
+    the app asks for. Apps can also add screen saver pictures, info-strip stats,
+    homepage cards, shortcuts and share data with other apps.</p>
+</section>
+
+<section id="architecture" class="section">
+  <h2>Architecture</h2>
+  <p class="sub">Everything runs on hardware in the house. The internet is only needed to
+    install or update apps, and for apps that fetch outside data.</p>
+  <figure class="arch">
+    <svg viewBox="0 0 960 430" role="img" aria-label="Architecture: wall screens and phones talk to the hub, which uses Postgres and Home Assistant and proxies container apps run by the supervisor; GitHub hosts the catalog and signed images">
+      <defs>
+        <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#7fa7d8"/></marker>
+      </defs>
+      <g class="box"><rect x="20" y="40" width="190" height="110" rx="14"/><text x="115" y="80">Wall screens</text><text class="t" x="115" y="104">Android kiosk app</text><text class="t" x="115" y="124">or any browser</text></g>
+      <g class="box"><rect x="20" y="190" width="190" height="80" rx="14"/><text x="115" y="226">Phones</text><text class="t" x="115" y="248">settings, admin</text></g>
+      <g class="box hub"><rect x="290" y="30" width="260" height="250" rx="16"/><text x="420" y="66">Hub (Django)</text>
+        <text class="t" x="420" y="100">home screen · settings</text>
+        <text class="t" x="420" y="124">app proxy (port per app)</text>
+        <text class="t" x="420" y="148">broker: permissions, secrets,</text>
+        <text class="t" x="420" y="168">state, events, shares</text>
+        <text class="t" x="420" y="200">encrypted secret vault</text>
+        <text class="t" x="420" y="232">event bus (MQTT-style)</text></g>
+      <g class="box"><rect x="290" y="330" width="120" height="70" rx="14"/><text x="350" y="370">PostgreSQL</text></g>
+      <g class="box"><rect x="430" y="330" width="120" height="70" rx="14"/><text x="490" y="362">Home</text><text x="490" y="384">Assistant</text></g>
+      <g class="box sup"><rect x="630" y="30" width="310" height="250" rx="16"/><text x="785" y="66">Supervisor</text>
+        <text class="t" x="785" y="92">verifies signatures · runs apps</text>
+        <g class="app"><rect x="652" y="112" width="128" height="44" rx="10"/><text class="t" x="716" y="139">lift_status</text></g>
+        <g class="app"><rect x="792" y="112" width="128" height="44" rx="10"/><text class="t" x="856" y="139">radiant</text></g>
+        <g class="app"><rect x="652" y="166" width="128" height="44" rx="10"/><text class="t" x="716" y="193">shuttle</text></g>
+        <g class="app"><rect x="792" y="166" width="128" height="44" rx="10"/><text class="t" x="856" y="193">speakers</text></g>
+        <text class="t" x="785" y="244">non-root · read-only · no caps</text>
+        <text class="t" x="785" y="264">network: none / outbound / lan</text></g>
+      <g class="box gh"><rect x="630" y="330" width="310" height="70" rx="14"/><text x="785" y="360">GitHub</text><text class="t" x="785" y="382">catalog · signed images (GHCR) · attestations</text></g>
+      <path d="M210 95H286" marker-end="url(#a)"/><path d="M210 230H286" marker-end="url(#a)"/>
+      <path d="M550 155H626" marker-end="url(#a)" marker-start="url(#a)"/>
+      <path d="M350 280V326" marker-end="url(#a)"/><path d="M490 280V326" marker-end="url(#a)"/>
+      <path d="M785 326V284" marker-end="url(#a)"/>
+    </svg>
+  </figure>
+</section>
+
+<section class="section alt" id="repos">
+  <h2>Repositories</h2>
+  <div class="repo-grid">
+    <a href="https://github.com/blackdiamondlodge/BlackDiamondHub"><b>BlackDiamondHub</b><span>The hub: home screen, settings, broker, vault</span></a>
+    <a href="https://github.com/blackdiamondlodge/bdh-sdk"><b>bdh-sdk</b><span>App contract, SDK and reusable app CI</span></a>
+    <a href="https://github.com/blackdiamondlodge/bdh-supervisor"><b>bdh-supervisor</b><span>Verifies and runs container apps</span></a>
+    <a href="https://github.com/blackdiamondlodge/bdh-app-catalog"><b>bdh-app-catalog</b><span>Released apps, image builds, attestations</span></a>
+    <a href="https://github.com/blackdiamondlodge/bdh-display"><b>bdh-display</b><span>Android kiosk app for the wall screens</span></a>
+    <a href="https://github.com/blackdiamondlodge?q=bdh-app-"><b>bdh-app-*</b><span>One repository per app</span></a>
+  </div>
+</section>
+
+<footer>
+  <p>Black Diamond Hub · built for Black Diamond Lodge, Sun Peaks, BC ·
+    <a href="https://github.com/blackdiamondlodge">github.com/blackdiamondlodge</a></p>
+</footer>
+
+<dialog id="lightbox"><img alt=""><button aria-label="Close">×</button></dialog>
+<script>
+  const lb = document.getElementById('lightbox'), img = lb.querySelector('img');
+  document.querySelectorAll('a[data-full]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault(); img.src = a.href; img.alt = a.querySelector('img').alt; lb.showModal();
+  }));
+  lb.addEventListener('click', () => lb.close());
+</script>
+</body>
+</html>
