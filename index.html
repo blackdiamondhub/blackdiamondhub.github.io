@@ -21,7 +21,7 @@
     <a href="#security">Security</a>
     <a href="#build">Build an app</a>
     <a href="#architecture">Architecture</a>
-    <a href="https://github.com/blackdiamondlodge">GitHub</a>
+    <a href="https://github.com/blackdiamondhub">GitHub</a>
   </nav>
 </header>
 
@@ -36,7 +36,7 @@
       and run in its own locked-down container.</p>
     <div class="cta">
       <a class="btn primary" href="#tour">Take the tour</a>
-      <a class="btn" href="https://github.com/blackdiamondlodge/BlackDiamondHub">View the source</a>
+      <a class="btn" href="https://github.com/blackdiamondhub/BlackDiamondHub">View the source</a>
     </div>
   </div>
   <a class="hero-shot" href="img/home.webp" data-full>
@@ -110,9 +110,9 @@
 
   <div class="steps">
     <div><span>1</span><h3>Publish</h3><p>An app repo tags a release. Shared CI builds a Python wheel and attests where it came from.</p></div>
-    <div><span>2</span><h3>Build</h3><p>The <a href="https://github.com/blackdiamondlodge/bdh-app-catalog">catalog</a> builds a container image from the wheel on a pinned runtime base, signs its provenance and opens a PR with the new entry.</p></div>
+    <div><span>2</span><h3>Build</h3><p>The <a href="https://github.com/blackdiamondhub/bdh-app-catalog">catalog</a> builds a container image from the wheel on a pinned runtime base, signs its provenance and opens a PR with the new entry.</p></div>
     <div><span>3</span><h3>Install</h3><p>Settings → Apps → Store lists what the app asks for (Home Assistant entities, network, memory) before you install it.</p></div>
-    <div><span>4</span><h3>Run</h3><p>The <a href="https://github.com/blackdiamondlodge/bdh-supervisor">supervisor</a> verifies the signature, starts the container and the hub proxies it on its own port, waking it on demand.</p></div>
+    <div><span>4</span><h3>Run</h3><p>The <a href="https://github.com/blackdiamondhub/bdh-supervisor">supervisor</a> verifies the signature, starts the container and the hub proxies it on its own port, waking it on demand.</p></div>
   </div>
 
   <div class="two-col">
@@ -175,7 +175,7 @@
 <section id="build" class="section alt">
   <h2>Build an app</h2>
   <p class="sub">An app is a Django app plus a manifest. The
-    <a href="https://github.com/blackdiamondlodge/bdh-sdk">bdh-sdk</a> gives it tiles,
+    <a href="https://github.com/blackdiamondhub/bdh-sdk">bdh-sdk</a> gives it tiles,
     settings, Home Assistant, speakers, events and shared data, and a reusable CI
     workflow that tests, releases and attests it.</p>
   <div class="two-col code-col">
@@ -213,7 +213,7 @@ spec = PluginSpec(
 <span class="c"># .github/workflows/ci.yml</span>
 jobs:
   hub:
-    uses: blackdiamondlodge/bdh-sdk/.github/workflows/app-ci.yml@v0
+    uses: blackdiamondhub/bdh-sdk/.github/workflows/app-ci.yml@v0
     with:
       app_id: radiant</code></pre>
   </div>
@@ -263,18 +263,18 @@ jobs:
 <section class="section alt" id="repos">
   <h2>Repositories</h2>
   <div class="repo-grid">
-    <a href="https://github.com/blackdiamondlodge/BlackDiamondHub"><b>BlackDiamondHub</b><span>The hub: home screen, settings, broker, vault</span></a>
-    <a href="https://github.com/blackdiamondlodge/bdh-sdk"><b>bdh-sdk</b><span>App contract, SDK and reusable app CI</span></a>
-    <a href="https://github.com/blackdiamondlodge/bdh-supervisor"><b>bdh-supervisor</b><span>Verifies and runs container apps</span></a>
-    <a href="https://github.com/blackdiamondlodge/bdh-app-catalog"><b>bdh-app-catalog</b><span>Released apps, image builds, attestations</span></a>
-    <a href="https://github.com/blackdiamondlodge/bdh-display"><b>bdh-display</b><span>Android kiosk app for the wall screens</span></a>
-    <a href="https://github.com/blackdiamondlodge?q=bdh-app-"><b>bdh-app-*</b><span>One repository per app</span></a>
+    <a href="https://github.com/blackdiamondhub/BlackDiamondHub"><b>BlackDiamondHub</b><span>The hub: home screen, settings, broker, vault</span></a>
+    <a href="https://github.com/blackdiamondhub/bdh-sdk"><b>bdh-sdk</b><span>App contract, SDK and reusable app CI</span></a>
+    <a href="https://github.com/blackdiamondhub/bdh-supervisor"><b>bdh-supervisor</b><span>Verifies and runs container apps</span></a>
+    <a href="https://github.com/blackdiamondhub/bdh-app-catalog"><b>bdh-app-catalog</b><span>Released apps, image builds, attestations</span></a>
+    <a href="https://github.com/blackdiamondhub/bdh-display"><b>bdh-display</b><span>Android kiosk app for the wall screens</span></a>
+    <a href="https://github.com/blackdiamondhub?q=bdh-app-"><b>bdh-app-*</b><span>One repository per app</span></a>
   </div>
 </section>
 
 <footer>
   <p>Black Diamond Hub · self-hosted, open source ·
-    <a href="https://github.com/blackdiamondlodge">github.com/blackdiamondlodge</a></p>
+    <a href="https://github.com/blackdiamondhub">github.com/blackdiamondhub</a></p>
 </footer>
 
 <dialog id="lightbox"><img alt=""><button aria-label="Close">×</button></dialog>
